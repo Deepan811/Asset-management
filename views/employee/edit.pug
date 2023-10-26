@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Edit Employee
+  form(action=`/employees/${employee.id}`, method='POST')
+    div
+      label(for='name') Name:
+      input(type='text', name='name', value=employee.name)
+    div
+      label(for='position') Position:
+      input(type='text', name='position', value=employee.position)
+    div
+      button(type='submit') Save Changes
+  a(href='/employees') Cancel

@@ -1,0 +1,17 @@
+// views/issue/issue.pug
+extends layout
+
+block content
+  h1 Issue Asset
+  form(action='/issue', method='POST')
+    label(for='assetId') Select an Asset:
+    select(name='assetId')
+      each asset in assets
+        option(value=asset.id)= asset.name
+
+    label(for='employeeId') Select an Employee:
+    select(name='employeeId')
+      each employee in employees
+        option(value=employee.id)= `${employee.firstName} ${employee.lastName}`
+
+    input(type='submit', value='Issue Asset')

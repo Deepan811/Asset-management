@@ -1,0 +1,12 @@
+// views/scrap/scrap.pug
+extends layout
+
+block content
+  h1 Scrap Asset
+  form(action='/scrap', method='POST')
+    label(for='assetId') Select an Asset:
+    select(name='assetId')
+      each asset in assets
+        option(value=asset.id)= asset.name
+
+    input(type='submit', value='Scrap Asset')

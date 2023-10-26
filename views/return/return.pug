@@ -1,0 +1,20 @@
+// views/return/return.pug
+extends layout
+
+block content
+  h1 Return Asset
+  form(action='/return', method='POST')
+    label(for='employeeId') Select an Employee:
+    select(name='employeeId')
+      each employee in employees
+        option(value=employee.id)= `${employee.firstName} ${employee.lastName}`
+
+    label(for='assetId') Select an Asset:
+    select(name='assetId')
+      each asset in assets
+        option(value=asset.id)= asset.name
+
+    label(for='reason') Reason for Return:
+    textarea(name='reason')
+
+    input(type='submit', value='Return Asset')

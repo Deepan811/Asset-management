@@ -1,0 +1,16 @@
+// views/history/history.pug
+extends layout
+
+block content
+  h1 Asset History
+  h2 Asset Details
+  p Name: #{asset.name}
+  p Serial Number: #{asset.serialNumber}
+  p Purchase Date: #{asset.purchaseDate}
+
+  h2 History Events
+  ul
+    each event in historyEvents
+      li
+        strong= event.type
+        | : #{event.description} (Date: #{event.date})

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Employee List
+  a(href='employees/new') Add New Employee
+
+  table
+    thead
+      tr
+        th Name
+        th Position
+        th Actions
+    tbody
+      each employee in employees
+        tr
+          td= employee.name
+          td= employee.position
+          td
+            a(href=`/employees/${employee.id}`) View
+            | &nbsp; | &nbsp;
+            a(href=`/employees/${employee.id}/edit`) Edit
+            | &nbsp; | &nbsp;
+            

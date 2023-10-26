@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Add New Employee
+  form(action='/employees', method='POST')
+    div
+      label(for='name') Name:
+      input(type='text', name='name')
+    div
+      label(for='position') Position:
+      input(type='text', name='position')
+    div
+      button(type='submit') Add Employee
+  a(href='/employees') Cancel

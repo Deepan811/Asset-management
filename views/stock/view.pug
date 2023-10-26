@@ -1,0 +1,29 @@
+// views/stock/view.pug
+extends layout
+
+block content
+  h1 Stock View
+  table
+    thead
+      tr
+        th Asset Name
+        th Branch
+        th Value
+    tbody
+      each asset in stockAssets
+        tr
+          td= asset.name
+          td= asset.branch
+          td= asset.value
+  h2 Totals by Branch
+  table
+    thead
+      tr
+        th Branch
+        th Total Assets
+    tbody
+      each branch, total in branchTotals
+        tr
+          td= branch
+          td= total
+  h3 Total Stock Value: #{totalValue}

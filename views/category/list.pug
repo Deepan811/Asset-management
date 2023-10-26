@@ -1,0 +1,19 @@
+// views/category/list.pug
+extends layout
+
+block content
+  h1 Asset Categories
+  a(href='/categories/add') Add Category
+  table
+    thead
+      tr
+        th Name
+        th Description
+        th Actions
+    tbody
+      each category in categories
+        tr
+          td= category.name
+          td= category.description
+          td
+            a(href=`/categories/edit/${category.id}`) Edit
